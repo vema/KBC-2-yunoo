@@ -1,0 +1,19 @@
+About this project
+------------------
+This project is a small addition to the functionality of YUNOO (see http://www.yunoo.nl). YUNOO is a web application that keeps track of your expenses/budget. In order to do that, it needs to have info from your bank account. That works as follows. You extract/download the transaction from your account into a CSV file. That file in turn, is read in by YUNOO. And while YUNOO already supports quite a number of (especially) Dutch and Belgian banks, it doesn't support all of them (yet). YUNOO has a provided a more or less generic interface format that can be used to upload bank transactions. So if your bank is not supported yet, and you can figure out how to convert the format of your transactions into the YUNOO format, you can use this nice application too. This project converts the files from KBC bank into the generic YUNOO format.
+
+HOWTO use it
+------------
+For simplicity sake I assume that you a know a bit of using the commandline. If not, google and learn. It's not hard.
+
+UNIX/LINUX: supported out of the box - all you need is GNU awk. Download the awk file. Download your transactions (e.g. as kbc-file.csv). Then run (on the commandline):
+$ awk -f kbc2yunoo.awk kbc-file.csv > yunoo-file.csv
+After that, upload the yunoo-file.csv to yunoo.nl (and select the generic fomat - ING - from the list of banks). You're done.
+
+WINDOWS: if not already done, install cygwin (minimal install) - that will provide all the basic unix goodies including AWK. Download your bank transaction file then run cygwin using the same commandline as for UNIX/LINUX. Upload the yunoo file and you're done.
+
+
+
+
+
+
